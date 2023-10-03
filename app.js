@@ -26,6 +26,14 @@ const products = [
   new Product("dog-duck"),
   new Product("dragon"),
   new Product("pen"),
+  new Product("pet-sweep"),
+  new Product("scissors"),
+  new Product("shark"),
+  new Product("sweep"),
+  new Product("tauntaun"),
+  new Product("unicorn"),
+  new Product("water-can"),
+  new Product("wine-glass"),
 ];
 
 // function that randomly gets a index for an item in item
@@ -67,6 +75,7 @@ function handleImgClick(event) {
   // check if the user has run out of clicks
   if (userClicks === maxClicks) {
     alert("You have run out of votes");
+    renderChart();
     return; // end the function here and don't run the rest
   }
 
@@ -111,3 +120,36 @@ const viewResults = document.getElementById("view-results");
 viewResults.addEventListener("click", showResults);
 
 renderProducts();
+
+// craete a function that make a chart
+function renderChart() {
+  // get where we are going to put the chart
+  const ctx = document.getElementById("myChart"); // context of the chart
+
+  const labels = [];
+  const views = [];
+  const clicks = [];
+
+  // populate the arrays with data
+  // TO DO
+
+  // run the Chart function (that does the chart making)
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: "# of views",
+          data: views,
+          borderWidth: 1,
+        },
+        {
+          label: "# of clicks",
+          data: clicks,
+          borderWidth: 1,
+        },
+      ],
+    },
+  });
+}

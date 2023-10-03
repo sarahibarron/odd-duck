@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./app.js" defer></script>
     <title>Odd Duck</title>
   </head>
   <body>
-    <section id="img-section">
-      <img id="img1" />
-      <img id="img2" />
-      <img id="img3" />
-    </section>
-    <ul id="results"></ul>
-    <button id="view-results">View results</button>
+    <main>
+      <h1>Odd Duck</h1>
+      <section id="img-section">
+        <img id="img1" />
+        <img id="img2" />
+        <img id="img3" />
+      </section>
+      <canvas id="myChart"></canvas>
+      <ul id="results"></ul>
+      <button id="view-results">View results</button>
+    </main>
   </body>
 </html>
