@@ -1,10 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f0e7de;
+  color: #231e1e;
+  text-shadow: #cd7853 1px 0 5px;
+}
+
 h1 {
+  font-family: "Young Serif", sans-serif;
+  font-size: 2rem;
   display: flex;
   justify-content: center;
+  padding-bottom: 8px;
 }
 
 main {
@@ -15,9 +26,24 @@ main {
 #img-section {
   display: flex;
   justify-content: space-between;
-  border: 1px solid fuchsia;
+  padding-top: 1rem;
 }
 
 #img-section img {
-  width: 30%;
+  width: 18rem;
+  height: 18rem;
+  border: #4a170c dotted 5px;
+}
+
+button {
+  padding: 15px 32px;
+  background-color: #4a170c;
+  border: #231e1e solid 1px;
+  color: #f0e7de;
+  text-align: center;
+  font-family: "Young Serif", sans-serif;
+}
+
+button:hover {
+  background-color: #cd7853;
 }
