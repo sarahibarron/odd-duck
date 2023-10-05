@@ -90,7 +90,6 @@ function handleImgClick(event) {
   // check if the user has run out of clicks
   if (userClicks === maxClicks) {
     alert("You have run out of votes");
-    renderChart();
     // take our array after we have updated the clicks and views, and add to localStorage
     localStorage.setItem("products", JSON.stringify(products));
     return; // end the function here and don't run the rest
@@ -117,41 +116,5 @@ function handleImgClick(event) {
 img1.addEventListener("click", handleImgClick);
 img2.addEventListener("click", handleImgClick);
 img3.addEventListener("click", handleImgClick);
-
-// function to create a new chart
-function renderChart() {
-  const ctx = document.getElementById("myChart");
-
-  const labels = [];
-  const views = [];
-  const clicks = [];
-
-  // loop through my products array and add in the label, views and clicks data to my arrays
-  for (let i = 0; i < products.length; i++) {
-    labels.push(products[i].name);
-    views.push(products[i].views);
-    clicks.push(products[i].clicks);
-  }
-
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          label: "# of views",
-          data: views,
-          borderWidth: 1,
-        },
-        {
-          type: "line",
-          label: "# of clicks",
-          data: clicks,
-          borderWidth: 1,
-        },
-      ],
-    },
-  });
-}
 
 renderProducts();
