@@ -8,6 +8,10 @@ const maxClicks = 25;
 
 const products = [];
 
+// make sure we don't see same products
+// this is where we'll store a reference to the products we just saw
+const previous = [];
+
 // a constructor that makes product objects
 function Product(name, views, clicks) {
   this.name = name;
@@ -64,10 +68,21 @@ function renderProducts() {
   let prod3 = randomProdIdx();
 
   // make sure they aren't the same
-  while (prod1 === prod2 || prod1 === prod3 || prod2 === prod3) {
+  while (
+    prod1 === prod2 ||
+    prod1 === prod3 ||
+    prod2 === prod3 ||
+    previous.includes(prod1) ||
+    previous.includes(prod2) ||
+    previous.includes(pro31)
+  ) {
+    prod1 = randomProdIdx();
     prod2 = randomProdIdx();
     prod3 = randomProdIdx();
   }
+
+  //empty the products array
+  previous = [prod1, prod2, prod3];
 
   // change the src and alt attributes of our img tags
   img1.src = products[prod1].src;
